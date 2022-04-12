@@ -4,10 +4,15 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
-
+<!--    어노테이션의 객체를 생성해주는 componenet-scan 설정 값-->
     <context:component-scan base-package="com.mirim.biz"/>
+<!--    객체 생성-->
     <bean id="log" class="com.mirim.biz.common.LogAdvice"/>
     <bean id="before" class="com.mirim.biz.common.BeforeAdvice"/>
+    <bean id="afterretuning" class="com.mirim.biz.common.AfterReturningAdvice"/>
+    <bean id="afterThrowing" class="com.mirim.biz.common.AfterThrowingAdvice"/>
+    <bean id="after" class="com.mirim.biz.common.AfterAdvice"/>
+    <bean id="around" class="com.mirim.biz.common.AroundAdvice"/>
     <aop:config>
         <aop:pointcut id="allPointcut"
                       expression="execution(* com.mirim.biz..*Impl.*(..))"/>
