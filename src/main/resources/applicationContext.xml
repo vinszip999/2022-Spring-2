@@ -6,8 +6,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
 <!--    어노테이션의 객체를 생성해주는 componenet-scan 설정 값-->
     <context:component-scan base-package="com.mirim.biz"/>
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 <!--    객체 생성-->
-    <bean id="log" class="com.mirim.biz.common.LogAdvice"/>
+ <!--   <bean id="log" class="com.mirim.biz.common.LogAdvice"/>
     <bean id="before" class="com.mirim.biz.common.BeforeAdvice"/>
     <bean id="afterretuning" class="com.mirim.biz.common.AfterReturningAdvice"/>
     <bean id="afterThrowing" class="com.mirim.biz.common.AfterThrowingAdvice"/>
@@ -21,7 +22,7 @@
         <aop:aspect ref="around">
             <aop:around method="aroundLog" pointcut-ref="allPointcut"/>
         </aop:aspect>
-    </aop:config>
+    </aop:config>-->
 
     <!--<bean id="tv" class="polymorphism.어쩔TV">
         <property name="speaker" ref="apple"/>k
